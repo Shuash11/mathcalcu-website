@@ -40,6 +40,8 @@ async function fetchTotalDownloads(repo) {
       return sum + r.assets.reduce((s, a) => s + a.download_count, 0);
     }, 0);
     el.textContent = formatNumber(total);
+    const statEl = document.getElementById('stat-downloads');
+    if (statEl) statEl.textContent = formatNumber(total);
   } catch {
     el.textContent = '—';
   }
