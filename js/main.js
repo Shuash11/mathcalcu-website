@@ -20,4 +20,27 @@ document.addEventListener('DOMContentLoaded', () => {
   new DownloadManager('[data-download]');
 
   new TeamCarousel('.team-scroll');
+
+  fetchTotalDownloads('Shuash11/MathCalcu');
 });
+
+function formatNumber(n) {
+  if (n >= 1000000) return (n / 1000000).toFixed(1) + 'M';
+  if (n >= 1000) return (n / 1000).toFixed(1) + 'K';
+  return n.toString();
+}
+
+async function fetchTotalDownloads(repo) {
+  const el = document.getElementById('download-count');
+  try {
+    const res = await fetch(`https://api.github.com/repos/${repo}/releases?per_page=100`);
+    if (!res.ok) throw new Error(String(res.status));
+    const releases = await res.json();
+    const total = releases.reduce((sum, r) => {
+      return sum + r.assets.reduce((s, a) => s + a.download_count, 0);
+    }, 0);
+    el.textContent = formatNumber(total);
+  } catch {
+    el.textContent = '—';
+  }
+}
