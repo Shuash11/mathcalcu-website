@@ -22,7 +22,41 @@ document.addEventListener('DOMContentLoaded', () => {
   new TeamCarousel('.team-scroll');
 
   fetchTotalDownloads('Shuash11/MathCalcu');
+  initCounters();
 });
+
+function initCounters() {
+  const counters = document.querySelectorAll('[data-count-to]');
+  if (!counters.length) return;
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const target = parseInt(el.dataset.countTo, 10);
+        const suffix = el.dataset.suffix || '';
+        animateCounter(el, target, suffix);
+        observer.unobserve(el);
+      }
+    });
+  }, { threshold: 0.3 });
+  counters.forEach((el) => observer.observe(el));
+}
+
+function animateCounter(el, target, suffix) {
+  const duration = 1500;
+  const steps = 60;
+  const increment = target / steps;
+  let current = 0;
+  const timer = setInterval(() => {
+    current += increment;
+    if (current >= target) {
+      el.textContent = target + suffix;
+      clearInterval(timer);
+    } else {
+      el.textContent = Math.floor(current) + suffix;
+    }
+  }, duration / steps);
+}
 
 function formatNumber(n) {
   if (n >= 1000000) return (n / 1000000).toFixed(1) + 'M';
@@ -41,7 +75,7 @@ async function fetchTotalDownloads(repo) {
     }, 0);
     el.textContent = formatNumber(total);
     const statEl = document.getElementById('stat-downloads');
-    if (statEl) statEl.textContent = formatNumber(total);
+    if (statEl) statEl.dataset.countTo = total;
   } catch {
     el.textContent = '—';
   }
