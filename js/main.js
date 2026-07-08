@@ -21,8 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   new TeamCarousel('.team-scroll');
 
-  fetchTotalDownloads('Shuash11/MathCalcu');
-  initCounters();
+  fetchTotalDownloads('Shuash11/MathCalcu').then(() => initCounters());
 });
 
 function initCounters() {
@@ -58,14 +57,7 @@ function animateCounter(el, target, suffix) {
   }, duration / steps);
 }
 
-function formatNumber(n) {
-  if (n >= 1000000) return (n / 1000000).toFixed(1) + 'M';
-  if (n >= 1000) return (n / 1000).toFixed(1) + 'K';
-  return n.toString();
-}
-
 async function fetchTotalDownloads(repo) {
-  const el = document.getElementById('download-count');
   try {
     const res = await fetch(`https://api.github.com/repos/${repo}/releases?per_page=100`);
     if (!res.ok) throw new Error(String(res.status));
@@ -73,10 +65,9 @@ async function fetchTotalDownloads(repo) {
     const total = releases.reduce((sum, r) => {
       return sum + r.assets.reduce((s, a) => s + a.download_count, 0);
     }, 0);
-    el.textContent = formatNumber(total);
     const statEl = document.getElementById('stat-downloads');
     if (statEl) statEl.dataset.countTo = total;
   } catch {
-    el.textContent = '—';
+    // silently fail — counter will show 0
   }
 }
