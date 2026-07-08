@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="MathCalcu — Your offline math companion for BSCS. Step-by-step calculus and analytic geometry solver." />
+  <title>MathCalcu — Offline Math Solver for BSCS</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+</head>
+<body>
+
+  <header>
+    <nav id="main-nav">
+      <div class="nav-logo">MathCalcu</div>
+
+      <div class="hamburger" id="hamburger" aria-label="Toggle navigation menu" role="button" tabindex="0">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#download">Download</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <section id="hero">
+      <div class="hero-glow"></div>
+      <div class="container">
+        <div class="hero-layout">
+          <div class="hero-content">
+            <h1>MathCalcu</h1>
+            <p class="tagline"><em>Your offline math companion for BSCS — step-by-step, no internet needed.</em></p>
+            <p class="hero-description">
+              MathCalcu is a Flutter app built specifically for BSCS students tackling calculus and analytic geometry.
+              It doesn't just give you answers — it walks you through every step, offline, using a built-in symbolic math engine.
+              Whether you're solving derivatives, evaluating limits, or working through circle equations, MathCalcu shows the work
+              the way your professor expects it.
+            </p>
+            <div class="hero-cta">
+              <a href="#download" class="btn btn-primary btn-lg">
+                <span class="icon">⬇</span>
+                Download Now
+              </a>
+              <a href="#features" class="btn btn-outline btn-lg">
+                Explore Features
+                <span class="icon">→</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="phone-mockup">
+            <div class="phone-notch"></div>
+            <div class="phone-screen">
+              <div class="status-bar">
+                <span>9:41</span>
+                <span>🔋 ▮▮▮▮▮</span>
+              </div>
+              <div class="app-header-mock">MathCalcu Solver</div>
+              <div class="math-line">d/dx (3x² + 2x)</div>
+              <div class="math-line step">→ Power Rule: 3·2x + 2</div>
+              <div class="math-line step">→ Simplify: 6x + 2</div>
+              <div class="math-line result">= 6x + 2</div>
+              <div class="phone-status">Offline • Symbolic Engine</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features">
+      <div class="container">
+        <div class="section-header">
+          <h2>What It Solves</h2>
+          <p>MathCalcu tackles the core topics in calculus and analytic geometry — with full step-by-step solutions.</p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card reveal stagger-child" style="--i: 0">
+            <span class="icon">∂</span>
+            <h3>Derivatives</h3>
+            <p>With full rule identification — power, product, quotient, chain rule and more.</p>
+          </div>
+          <div class="feature-card reveal stagger-child" style="--i: 1">
+            <span class="icon">lim</span>
+            <h3>Evaluating Limits</h3>
+            <p>Substitution, factoring, LCD, and conjugate methods for any limit problem.</p>
+          </div>
+          <div class="feature-card reveal stagger-child" style="--i: 2">
+            <span class="icon">∞</span>
+            <h3>Limits at Infinity</h3>
+            <p>Rational, radical, and trigonometric limits as x approaches infinity.</p>
+          </div>
+          <div class="feature-card reveal stagger-child" style="--i: 3">
+            <span class="icon">📐</span>
+            <h3>Slope Using Derivatives</h3>
+            <p>Explicit, implicit, and parametric differentiation for slope analysis.</p>
+          </div>
+          <div class="feature-card reveal stagger-child" style="--i: 4">
+            <span class="icon">≤</span>
+            <h3>Inequalities</h3>
+            <p>Linear, quadratic, rational, radical, and absolute value inequalities.</p>
+          </div>
+          <div class="feature-card reveal stagger-child" style="--i: 5">
+            <span class="icon">○</span>
+            <h3>Circles</h3>
+            <p>Find center, radius, standard form and general form equations.</p>
+          </div>
+          <div class="feature-card reveal stagger-child" style="--i: 6">
+            <span class="icon">↔</span>
+            <h3>Distance & Midpoint</h3>
+            <p>Coordinate distance and midpoint calculations with graphing support.</p>
+          </div>
+          <div class="feature-card reveal stagger-child" style="--i: 7">
+            <span class="icon">/</span>
+            <h3>Slope & Intercept</h3>
+            <p>Point-slope, two-point, parallel and perpendicular line equations.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="how-it-works">
+      <div class="container">
+        <div class="section-header">
+          <h2>How It Works</h2>
+          <p>Three simple steps to solve any problem — completely offline.</p>
+        </div>
+
+        <div class="screenshot-placeholder reveal-left reveal">
+          <span class="preview-icon">📱</span>
+          <p class="preview-label">App Preview — Solving a Derivative</p>
+          <div class="preview-math">d/dx (3x² + 2x) = 6x + 2</div>
+          <div class="preview-step">
+            ✓ Step 1: Identify rule → Power Rule<br />
+            ✓ Step 2: Apply derivative → 3·2x + 2<br />
+            ✓ Step 3: Simplify → 6x + 2
+          </div>
+        </div>
+
+        <div class="steps-visual">
+          <div class="step-block reveal stagger-child" style="--i: 0">
+            <div class="step-header">
+              <div class="step-badge">1</div>
+              <h3>Input Your Problem</h3>
+            </div>
+            <p>Type or paste any math expression — derivatives like <span class="code-inline">d/dx (3x²)</span>, limits, equations, and more.</p>
+          </div>
+          <div class="step-block reveal stagger-child" style="--i: 1">
+            <div class="step-header">
+              <div class="step-badge">2</div>
+              <h3>Solve Instantly</h3>
+            </div>
+            <p>The built-in symbolic math engine processes your problem in milliseconds — no internet connection required.</p>
+          </div>
+          <div class="step-block reveal stagger-child" style="--i: 2">
+            <div class="step-header">
+              <div class="step-badge">3</div>
+              <h3>See Every Step</h3>
+            </div>
+            <p>Review a complete, professor-ready breakdown showing exactly how each rule is applied to reach the solution.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="team">
+      <div class="container">
+        <div class="section-header">
+          <h2>Team</h2>
+          <p>Built by BSCS students, for BSCS students.</p>
+        </div>
+
+        <div class="team-scroll">
+          <div class="team-track">
+            <div class="team-card">
+              <div class="team-avatar" data-initial="J">
+                <img src="assets/images/lead_developer.jpg" alt="Joashua Marl Barimbao avatar" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />
+                <span class="avatar-fallback">J</span>
+              </div>
+              <h3>Joashua Marl Barimbao</h3>
+              <p class="role">Lead Developer / Repo Owner</p>
+            </div>
+            <div class="team-card">
+              <div class="team-avatar" data-initial="D">
+                <img src="assets/images/Documentor.jpg" alt="Documentor" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />
+                <span class="avatar-fallback">D</span>
+              </div>
+              <h3>Michaela Denise Ong</h3>
+              <p class="role">UI Design</p>
+            </div>
+            <div class="team-card">
+              <div class="team-avatar" data-initial="J">
+                <img src="assets/images/Developer 2.jpg" alt="John Carlo Legaste" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />
+                <span class="avatar-fallback">J</span>
+              </div>
+              <h3>John Carlo Legaste</h3>
+              <p class="role">Developer 2</p>
+            </div>
+            <div class="team-card">
+              <div class="team-avatar" data-initial="N">
+                <img src="assets/images/developer 3.jpg" alt="Nash Bruce Quiros" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />
+                <span class="avatar-fallback">N</span>
+              </div>
+              <h3>Nash Bruce Quiros</h3>
+              <p class="role">Developer 3</p>
+            </div>
+            <div class="team-card">
+              <div class="team-avatar" data-initial="J">
+                <img src="assets/images/Developer 4.png" alt="John Lin Redido" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />
+                <span class="avatar-fallback">J</span>
+              </div>
+              <h3>John Lin Redido</h3>
+              <p class="role">Developer 4</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="badges-container reveal-bounce reveal">
+          <span class="badge">Flutter</span>
+          <span class="badge">Dart</span>
+          <span class="badge">Python</span>
+          <span class="badge">flutter_math_fork</span>
+          <span class="badge">Fully Offline</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="download">
+      <div class="container">
+        <div class="section-header">
+          <h2>Download</h2>
+          <p>Get MathCalcu for your platform — free, open source, and ready to use offline.</p>
+        </div>
+
+        <div class="download-platforms">
+          <div class="download-card reveal-bounce reveal" style="--i: 0">
+            <span class="platform-icon">🪟</span>
+            <h3>Windows Desktop</h3>
+            <p class="file-size">ZIP Archive ~15 MB</p>
+            <span class="format-tag">.exe</span>
+            <p class="download-note">No installation needed — just unzip and run <span class="code-inline">mathcalcu.exe</span></p>
+            <a href="https://github.com/Shuash11/MathCalcu/releases/download/v1.3.1/MathCalcu-Windows-v1.3.1.zip" class="btn btn-primary btn-lg" data-download="windows" data-url="https://github.com/Shuash11/MathCalcu/releases/download/v1.3.1/MathCalcu-Windows-v1.3.1.zip">
+              <span class="icon">🪟</span>
+              Download for Windows
+            </a>
+          </div>
+          <div class="download-card reveal-bounce reveal" style="--i: 1">
+            <span class="platform-icon">📱</span>
+            <h3>Android Mobile</h3>
+            <p class="file-size">APK Package ~58 MB</p>
+            <span class="format-tag">.apk</span>
+            <p class="download-note">Sideload required — enable <span class="code-inline">"Install from unknown sources"</span> in settings</p>
+            <a href="https://github.com/Shuash11/MathCalcu/releases/download/latest/MathCalcu.apk" class="btn btn-outline btn-lg" data-download="android" data-url="https://github.com/Shuash11/MathCalcu/releases/download/latest/MathCalcu.apk">
+              <span class="icon">📱</span>
+              Download APK
+            </a>
+          </div>
+          <div class="download-card reveal-bounce reveal" style="--i: 2">
+            <span class="platform-icon">🌐</span>
+            <h3>iOS (Web App)</h3>
+            <p class="file-size">PWA — works offline</p>
+            <span class="format-tag">web</span>
+            <p class="download-note">Open in Safari, then add to Home Screen for an app-like experience</p>
+            <a href="https://shuash11.github.io/MathCalcu/" class="btn btn-outline btn-lg" target="_blank" rel="noopener noreferrer">
+              <span class="icon">🌐</span>
+              Go to Web App
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <p>&copy; 2026 MathCalcu. Built with Flutter & Dart.</p>
+        <p><a href="https://github.com/Shuash11/MathCalcu" target="_blank" rel="noopener noreferrer">GitHub Repository →</a></p>
+        <p>Open source</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="js/main.js?v=2"></script>
+</body>
+</html>
