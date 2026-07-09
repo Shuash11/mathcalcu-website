@@ -78,9 +78,10 @@ async function fetchLatestVersion(repo) {
     const res = await fetch(`https://api.github.com/repos/${repo}/releases/latest`);
     if (!res.ok) throw new Error(String(res.status));
     const data = await res.json();
-    const badge = document.getElementById('latest-version');
-    if (badge) badge.textContent = `\u{1F4E6} Latest: ${data.tag_name}`;
+    document.querySelectorAll('.latest-version').forEach(el => {
+      el.textContent = `\u{1F4E6} Latest: ${data.tag_name}`;
+    });
   } catch {
-    document.getElementById('latest-version')?.remove();
+    document.querySelectorAll('.latest-version').forEach(el => el.remove());
   }
 }
