@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
   new TeamCarousel('.team-scroll');
 
   fetchTotalDownloads('Shuash11/MathCalcu').then(() => initCounters());
+  fetchLatestVersion('Shuash11/MathCalcu');
 });
 
 function initCounters() {
@@ -69,5 +70,17 @@ async function fetchTotalDownloads(repo) {
     if (statEl) statEl.dataset.countTo = total;
   } catch {
     // silently fail — counter will show 0
+  }
+}
+
+async function fetchLatestVersion(repo) {
+  try {
+    const res = await fetch(`https://api.github.com/repos/${repo}/releases/latest`);
+    if (!res.ok) throw new Error(String(res.status));
+    const data = await res.json();
+    const badge = document.getElementById('latest-version');
+    if (badge) badge.textContent = `\u{1F4E6} Latest: ${data.tag_name}`;
+  } catch {
+    document.getElementById('latest-version')?.remove();
   }
 }
